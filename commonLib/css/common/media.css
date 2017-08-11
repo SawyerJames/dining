@@ -1,0 +1,11 @@
+/*媒查检索->768px/1024px*/
+@media screen and (min-width: 768px) {
+    html{
+        font-size: 24px !important;
+    }
+}
+@media screen and (min-width: 1024px) {
+    html{
+        font-size: 32px !important;
+    }
+}

@@ -1,0 +1,498 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: #FAFAFA;
+}
+
+html {
+    background: #fff;
+}
+
+
+/*父容器*/
+
+.container {
+    width: 100%;
+    height: 100%;
+    font-size: .875rem;
+}
+
+
+/*头部图片宣传*/
+
+#imgContainer {
+    width: 100%;
+    height: 20%;
+    background: url('../images/orderConfirm/bg.png');
+    background-size: cover;
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.img_textContainer {
+    width: 80%;
+    height: 60%;
+    background: rgba(255, 255, 255, .6);
+    border-radius: .3rem;
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.img_textContainer .img_text_big {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FF4E30;
+}
+
+.img_textContainer .img_text_small {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #FF4E30;
+}
+
+
+/*表单*/
+
+#formContainer {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/*四个表单栏通用样式*/
+
+.form_msgContainer {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+}
+
+
+/*四个表单栏->所有下列直接子div：通用样式*/
+
+.form_time,
+.form_people,
+.form_order,
+.form_tableMsg,
+.form_tableNumber,
+.form_name,
+.form_phone,
+.form_remark {
+    width: 90%;
+    min-height: 3rem;
+    border-bottom: 1px solid #ddd;
+    padding: 0 5%;
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.form_people,
+.form_tableNumber,
+.form_phone {
+    border-bottom: .6rem solid #eee;
+}
+
+.form_time>div,
+.form_people>div,
+.form_order>div,
+.form_tableMsg>div,
+.form_tableNumber>div,
+.form_name>div,
+.form_phone>div,
+.form_time .time_icon {
+    display: block;
+    height: 100%;
+    line-height: 3rem;
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+
+/*第一个表单栏：时间人数*/
+
+
+/*时间*/
+
+.form_time .time_msg {
+    font-weight: bold;
+}
+
+.form_time .time_icon {
+    justify-content: flex-end;
+    -ms-align-items: flex-end;
+    align-items: flex-end;
+}
+
+.form_time .time_icon i {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background: url('../images/orderConfirm/go.png');
+    background-size: cover;
+}
+
+
+/*人数*/
+
+.form_people .people_msg {
+    font-weight: bold;
+}
+
+.form_people button {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 1.3rem;
+    border: none;
+    margin: 0 .5rem;
+    outline: none;
+}
+
+.form_people button.button_reduce {
+    background: url('../images/orderConfirm/reduce.png');
+    background-size: cover;
+}
+
+.form_people button.button_add {
+    background: url('../images/orderConfirm/add.png');
+    background-size: cover;
+}
+
+.form_people button:last-child {
+    margin-right: 0;
+}
+
+
+/*第二个表单栏：订座*/
+
+
+/*订座开关*/
+
+.form_order .order_msg {
+    font-weight: bold;
+}
+
+.form_order .order_button {
+    position: relative;
+}
+
+.form_order .button_circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.55rem;
+    height: 1.55rem;
+    border-radius: 1.55rem;
+    background: #ddd;
+}
+
+.form_order .button_order_hack {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    display: block;
+    width: 3rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 2px #ddd inset;
+}
+
+.form_order .button_order {
+    outline: none;
+    width: 3rem;
+    height: 1.5rem;
+    opacity: 0;
+    z-index: 1;
+}
+
+
+/*可选座位*/
+
+.form_tableMsg {
+    border: none;
+}
+
+.form_tableMsg .tableMsg_msg {
+    font-weight: bold;
+}
+
+.form_tableMsg .tableMsg_number {
+    color: #FF4E30;
+}
+
+
+/*桌位号码*/
+
+.form_tableNumber {
+    height: auto;
+    flex-wrap: wrap;
+    margin-top: -.3rem;
+}
+
+.form_tableNumber .tableNumber_msg {
+    font-weight: bold;
+}
+
+.form_tableNumber .tableNumber_choose {
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tableNumber_choose .radio {
+    position: relative;
+    width: 3rem;
+    height: 1.5rem;
+    margin: 0 .5rem .75rem;
+    border: 1px solid #ddd;
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.tableNumber_choose .radio label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    z-index: 0;
+    color: #999;
+}
+
+.tableNumber_choose .radio input {
+    width: 3rem;
+    height: 1.5rem;
+    opacity: 0;
+    z-index: 1;
+}
+
+
+/*第三个表单栏：姓名手机*/
+
+
+/*姓名*/
+
+.form_name .name_msg {
+    font-weight: bold;
+}
+
+.form_name .name_container {
+    width: 80%;
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.form_name .name_input input {
+    width: 5rem;
+    color: #333;
+    border: none;
+    outline: none;
+}
+
+.form_name .name_radio_type,
+.form_name .name_sex,
+.form_name .name_sex_content {
+    /*flex的兼容布局*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.form_name .name_sex_content>label {
+    margin: 0 .5rem;
+}
+
+.form_name .name_sex_content:last-child>label {
+    margin-right: 0;
+}
+
+.form_name .name_radio_type {
+    margin-top: -2px;
+    position: relative;
+}
+
+.form_name .name_radio_type_hack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #999;
+    z-index: 0;
+}
+
+.form_name .name_radio_type_hack_true {
+    background: url('../images/orderConfirm/true.png');
+    background-size: cover;
+    border: 1px solid #36AB5E;
+}
+
+.form_name .name_sex_content input {
+    outline: none;
+    width: 1rem;
+    height: 1rem;
+    opacity: 0;
+    z-index: 1;
+}
+
+
+/*手机*/
+
+.form_phone .phone_msg {
+    font-weight: bold;
+}
+
+.form_phone .phone_input {
+    width: 80%;
+}
+
+.form_phone .phone_input input {
+    width: 100%;
+    color: #333;
+    border: none;
+    outline: none;
+}
+
+
+/*第四个表单栏：备注*/
+
+.form_remark {
+    height: 10rem;
+    margin: .5rem 0 0;
+    border: none;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: flex-start;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.form_remark .remark_msg {
+    font-weight: bold;
+}
+
+.form_remark .remark_textarea {
+    width: 100%;
+}
+
+.form_remark textarea {
+    margin: .5rem auto;
+    padding: 2%;
+    width: 96%;
+    height: 8rem;
+    border: 1px solid #ddd;
+    border-radius: .3rem;
+    outline: none;
+}

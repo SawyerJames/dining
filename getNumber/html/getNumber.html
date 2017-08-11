@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <!-- ios下删除默认的苹果工具栏和菜单栏 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- ios下控制状态栏显示样式，黑色 -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!-- 电话号码非默认识别 -->
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="../css/getNumber.css">
+    <link rel="stylesheet" type="text/css" href="../../commonLib/css/common/reset.css">
+    <!-- @media css -->
+    <link rel="stylesheet" type="text/css" href="../../commonLib/css/common/media.css">
+    <title>排队取号</title>
+</head>
+
+<body>
+    <!-- 父容器 -->
+    <div class="container">
+        <!-- 餐桌取号容器 -->
+        <form method="post" action="">
+            <div id="getContainer">
+                <div class="get_msg_container">
+                    <span>餐桌类型</span>
+                    <span>等待桌数</span>
+                    <span>预估时间</span>
+                    <span>确定取号</span>
+                </div>
+                <!-- 小桌 -->
+                <div class="get_small_container">
+                    <div class="table_msg">
+                        <span>小桌</span>
+                        <span>1-2人</span>
+                    </div>
+                    <div class="table_number">
+                        <span>8桌</span>
+                    </div>
+                    <div class="table_waitTime">
+                        <span>11分钟</span>
+                    </div>
+                    <div class="table_btn">
+                        <input type="checkbox" id="checkbox_small" name="table_btn" value="0" />
+                    </div>
+                </div>
+                <!-- 中桌 -->
+                <div class="get_mid_container">
+                    <div class="table_msg">
+                        <span>中桌</span>
+                        <span>3-4人</span>
+                    </div>
+                    <div class="table_number">
+                        <span>22桌</span>
+                    </div>
+                    <div class="table_waitTime">
+                        <span>39分钟</span>
+                    </div>
+                    <div class="table_btn">
+                        <input type="checkbox" id="checkbox_mid" name="table_btn" value="1" />
+                    </div>
+                </div>
+                <!-- 大桌 -->
+                <div class="get_big_container">
+                    <div class="table_msg">
+                        <span>大桌</span>
+                        <span>5人以上</span>
+                    </div>
+                    <div class="table_number">
+                        <span>3桌</span>
+                    </div>
+                    <div class="table_waitTime">
+                        <span>8分钟</span>
+                    </div>
+                    <div class="table_btn">
+                        <input type="checkbox" id="checkbox_big" name="table_btn" value="2" />
+                    </div>
+                </div>
+            </div>
+            <!-- 信息容器 -->
+            <div id="msgContainer">
+                <div class="msg_msg">
+                    <p>听到叫号请到迎宾台，过号作废，重新取号。</p>
+                    <p>等待桌数为3桌时，微信平台进行通知，请注意查看。</p>
+                </div>
+                <div class="msg_phone">
+                    <img src="../../commonLib/images/phone.png">
+                    <span>0431-62024568</span>
+                </div>
+                <div class="msg_add">
+                    <img src="../../commonLib/images/add.png">
+                    <span>南关区东北亚金融中心2#楼</span>
+                </div>
+            </div>
+            <div id="submitContainer">
+                <button type="submit">确认提交</button>
+            </div>
+        </form>
+    </div>
+    <!-- 外部库引用 -->
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+</body>
+
+</html>
