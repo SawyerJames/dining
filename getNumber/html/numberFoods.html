@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <!-- ios下删除默认的苹果工具栏和菜单栏 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- ios下控制状态栏显示样式，黑色 -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!-- 电话号码非默认识别 -->
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="../css/numberFoods.css">
+    <link rel="stylesheet" type="text/css" href="../../commonLib/css/common/reset.css">
+    <!-- @media css -->
+    <link rel="stylesheet" type="text/css" href="../../commonLib/css/common/media.css">
+    <title>菜单预览</title>
+</head>
+
+<body>
+    <!-- 父容器 -->
+    <div class="container">
+        <!-- 图片容器 -->
+        <div id="imgContainer"></div>
+        <!-- 菜单列表 双栏布局-->
+        <!-- 左侧选择列表->tab切换 -->
+        <ul id="foodsNav">
+            <li class="active">中华菜系</li>
+            <li>食疗养生</li>
+            <li>每日三餐</li>
+            <li>西点烘焙</li>
+            <li>甜水饮料</li>
+            <li>食疗养生</li>
+            <li>每日三餐</li>
+            <li>西点烘焙</li>
+            <li>甜水饮料</li>
+        </ul>
+        <!-- 右侧菜单列表->tab切换 -->
+        <div id="foodsListContainer">
+            <ul class="foodsList">
+                <!-- 单一菜品 -->
+                <li>
+                    <img class="foods_img" src="../images/numberFoods/food.png">
+                    <div class="foods_msg">
+                        <span class="foods_title">斯嘉丽·约翰逊</span>
+                        <p class="foods_money"><span>￥</span>无价</p>
+                    </div>
+                </li>
+                <!-- 单一菜品end -->
+                <li>
+                    <img class="foods_img" src="../images/numberFoods/food.png">
+                    <div class="foods_msg">
+                        <span class="foods_title">克里斯·埃文斯</span>
+                        <p class="foods_money"><span>￥</span>10亿</p>
+                    </div>
+                </li>
+            </ul>
+            <ul class="foodsList offList">
+                <!-- 单一菜品 -->
+                <li>
+                    <img class="foods_img" src="../images/numberFoods/food.png">
+                    <div class="foods_msg">
+                        <span class="foods_title">罗伯特·唐尼</span>
+                        <p class="foods_money"><span>￥</span>8亿</p>
+                    </div>
+                </li>
+                <!-- 单一菜品end -->
+            </ul>
+        </div>
+    </div>
+    <!-- 外部库引用 -->
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/numberFoods.js"></script>
+</body>
+</body>
+
+</html>
