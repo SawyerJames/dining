@@ -17,7 +17,9 @@ html {
     font-size: .875rem;
 }
 
-
+.disabled{
+    background: #EBEBE4 !important;
+}
 /*头部图片宣传*/
 
 #imgContainer {
@@ -99,7 +101,7 @@ html {
 
 /*四个表单栏通用样式*/
 
-.form_msgContainer {
+.form_msgContainer{
     width: 100%;
     height: auto;
     background: #fff;
@@ -180,99 +182,114 @@ html {
 
 
 /*时间*/
-
-.form_time .time_msg {
-    font-weight: bold;
+.Day_title{
+    margin-top: .5rem;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 5%;
 }
-
-.form_time .time_icon {
-    justify-content: flex-end;
-    -ms-align-items: flex-end;
-    align-items: flex-end;
-}
-
-.form_time .time_icon i {
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    background: url('../images/orderConfirm/go.png');
-    background-size: cover;
+.Day_order {
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 
-/*人数*/
+/*移动端隐藏滚动条但可以滚动 css hack*/
 
-.form_people .people_msg {
-    font-weight: bold;
+.Day_order::-webkit-scrollbar {
+    display: none;
 }
 
-.form_people button {
-    width: 1.3rem;
-    height: 1.3rem;
-    border-radius: 1.3rem;
-    border: none;
-    margin: 0 .5rem;
+.Day_order span {
+    display: inline-block;
+    width: 5rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #333;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin: .5rem .1rem;
+}
+.Day_order span.choose{
+    background: #FF4E30;
+    color: #fff;
+}
+.Day_order span:first-child {
+    margin-left: .5rem;
+}
+
+.Day_order span:last-child {
+    margin-right: .5rem;
+}
+
+
+/*订座具体时间容器*/
+
+#TimeContainer {
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border-bottom: 1rem solid #EFEFEF;
+}
+
+
+/*移动端隐藏滚动条但可以滚动 css hack*/
+
+#TimeContainer::-webkit-scrollbar {
+    display: none;
+}
+
+#TimeContainer .time_radio_container {
+    display: inline-block;
+    width: 4rem;
+    height: 2rem;
+    text-align: center;
+    margin: 1rem .1rem;
+    position: relative;
+    z-index: 0;
+}
+
+#TimeContainer .time_radio_container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #333;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: .3rem;
+    z-index: -1;
+}
+#TimeContainer .time_radio_container .choose{
+    background: #FF4E30;
+    color: #fff;
+}
+#TimeContainer .time_radio_container input {
+    opacity: 0;
+    margin: 0 auto;
+    width: 4rem;
+    height: 2rem;
+    z-index: 1;
     outline: none;
 }
 
-.form_people button.button_reduce {
-    background: url('../images/orderConfirm/reduce.png');
-    background-size: cover;
+#TimeContainer div:first-child {
+    margin-left: .5rem;
 }
 
-.form_people button.button_add {
-    background: url('../images/orderConfirm/add.png');
-    background-size: cover;
-}
-
-.form_people button:last-child {
-    margin-right: 0;
+#TimeContainer div:last-child {
+    margin-right: .5rem;
 }
 
 
 /*第二个表单栏：订座*/
-
-
-/*订座开关*/
-
-.form_order .order_msg {
-    font-weight: bold;
-}
-
-.form_order .order_button {
-    position: relative;
-}
-
-.form_order .button_circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1.55rem;
-    height: 1.55rem;
-    border-radius: 1.55rem;
-    background: #ddd;
-}
-
-.form_order .button_order_hack {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
-    display: block;
-    width: 3rem;
-    height: 1.5rem;
-    border-radius: 1.5rem;
-    border: 1px solid #ddd;
-    box-shadow: 1px 1px 2px #ddd inset;
-}
-
-.form_order .button_order {
-    outline: none;
-    width: 3rem;
-    height: 1.5rem;
-    opacity: 0;
-    z-index: 1;
-}
 
 
 /*可选座位*/
@@ -323,6 +340,7 @@ html {
     height: 1.5rem;
     margin: 0 .5rem .75rem;
     border: 1px solid #ddd;
+    border-radius: .2rem;
     /*flex的兼容布局*/
     display: -webkit-box;
     display: -moz-box;
@@ -344,13 +362,19 @@ html {
     text-align: center;
     z-index: 0;
     color: #999;
+    background: #eee;
+    border-radius: .2rem;
 }
-
+.tableNumber_choose .radio label.choose{
+    background: #FF4E30;
+    color: #fff;
+}
 .tableNumber_choose .radio input {
     width: 3rem;
     height: 1.5rem;
     opacity: 0;
     z-index: 1;
+    outline: none;
 }
 
 
@@ -491,8 +515,43 @@ html {
     margin: .5rem auto;
     padding: 2%;
     width: 96%;
-    height: 8rem;
+    height: 6rem;
     border: 1px solid #ddd;
     border-radius: .3rem;
     outline: none;
+}
+
+/* 提交表单 */
+#btnHack{
+    width: 100%;
+    height: 2.5rem;   
+}
+#submitBtn{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+#submitBtn button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: #FF4E30;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+}
+
+/*信息验证*/
+#reContent{
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    font-size: .875rem;
+    background: rgba(255,78,48,.7);
+    color: #fff;   
 }

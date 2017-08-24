@@ -20,6 +20,8 @@
 <body>
     <!-- 父容器 -->
     <div class="container">
+        <!-- 验证信息 -->
+        <h3 id="reContent"></h3>
         <!-- 头部图片宣传 -->
         <div id="imgContainer">
             <div class="img_textContainer">
@@ -30,43 +32,20 @@
         <!-- 表单提交 -->
         <form id="formContainer" method="post" action="">
             <!-- 表单信息->表单信息栏*4 -->
-            <!-- 表单提交->时间人数 -->
+            <!-- 表单提交->时间和桌数 -->
             <div class="form_msgContainer">
-                <div class="form_time">
-                    <div class="time_msg">
-                        <span>时间：</span>
-                    </div>
-                    <div class="time_people">
-                        <span>8月5日</span>
-                        <span>11:30</span>
-                    </div>
-                    <a href="" class="time_icon">
-                        <i></i>
-                    </a>
+                <h3 class="Day_title">选择时间：</h3>
+                <!-- 选择具体天数->死链radio->传递给后台value -->
+                <div class="Day_order">
+                    <span>08-07</span>
+                    <span>08-08</span>
+                    <span>08-09</span>
+                    <span>08-10</span>
+                    <span>08-11</span>
+                    <span>08-12</span>
+                    <span>08-13</span>
                 </div>
-                <div class="form_people">
-                    <div class="people_msg">
-                        <span>人数：</span>
-                    </div>
-                    <div class="people_choose">
-                        <button type="button" class="button_reduce"></button>
-                        <span>12</span>
-                        <button type="button" class="button_add"></button>
-                    </div>
-                </div>
-            </div>
-            <!-- 表单提交->订座 -->
-            <div class="form_msgContainer">
-                <div class="form_order">
-                    <div class="order_msg">
-                        <span>我要订包房(8人起订)</span>
-                    </div>
-                    <div class="order_button">
-                        <label class="button_order_hack"></label>
-                        <label class="button_circle"></label>
-                        <input type="checkbox" value="0" class="button_order"></input>
-                    </div>
-                </div>
+                <!-- 可选桌位 -->
                 <div class="form_tableMsg">
                     <div class="tableMsg_msg">
                         <span>可选座位：</span>
@@ -75,19 +54,58 @@
                         <p>仅剩<span>2</span>桌</p>
                     </div>
                 </div>
+                <!-- 桌位号码 -->
                 <div class="form_tableNumber">
                     <div class="tableNumber_msg">
                         <span>桌位号码：</span>
                     </div>
                     <div class="tableNumber_choose">
                         <div class="radio">
-                            <label>01</label>
-                            <input type="radio" name="tableNumber" value="0"></input>
+                            <label class="disabled">01</label>
+                            <input type="radio" name="tableNumber" disabled value="0"></input>
                         </div>
                         <div class="radio">
-                            <label>02</label>
-                            <input type="radio" name="tableNumber" value="0"></input>
+                            <label class="disabled">02</label>
+                            <input type="radio" name="tableNumber" disabled value="1"></input>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 表单提交->时间 -->
+            <!-- 订座具体时间容器/死链radio->直接传后台value -->
+            <div class="form_msgContainer">
+                <div id="TimeContainer">
+                    <div class="time_radio_container">
+                        <span class="disabled">8:00</span>
+                        <input type="radio" disabled name="time" value="0"></input>
+                    </div>
+                    <div class="time_radio_container">
+                        <span class="disabled">10:00</span>
+                        <input type="radio" disabled name="time" value="1"></input>
+                    </div>
+                    <div class="time_radio_container">
+                        <span class="disabled">12:00</span>
+                        <input type="radio" disabled name="time" value="2"></input>
+                    </div>
+                    <div class="time_radio_container">
+                        <span class="disabled">14:00</span>
+                        <input type="radio" disabled name="time" value="3"></input>
+                    </div>
+                    <div class="time_radio_container">
+                        <span class="disabled">16:00</span>
+                        <input type="radio" disabled name="time" value="4"></input>
+                    </div>
+                    <div class="time_radio_container">
+                        <span class="disabled">18:00</span>
+                        <input type="radio" disabled name="time" value="5"></input>
+                    </div>
+                    <div class="time_radio_container">
+                        <span class="disabled">20:00</span>
+                        <input type="radio" disabled name="time" value="6"></input>
+                    </div>
+                    <div class="time_radio_container">
+                        <span class="disabled">22:00</span>
+                        <input type="radio" disabled name="time" value="7"></input>
                     </div>
                 </div>
             </div>
@@ -99,20 +117,20 @@
                     </div>
                     <div class="name_container">
                         <div class="name_input">
-                            <input type="text" placeholder="请输入姓名"></input>
+                            <input type="text" disabled name="nickName" placeholder="请输入姓名"></input>
                         </div>
                         <div class="name_sex">
                             <div class="name_sex_content">
                                 <div class="name_radio_type">
                                     <label class="name_radio_type_hack"></label>
-                                    <input type="radio" name="sex" value="0"></input>
+                                    <input type="radio" disabled name="sex" value="0"></input>
                                 </div>
                                 <label>先生</label>
                             </div>
                             <div class="name_sex_content">
                                 <div class="name_radio_type">
-                                    <label class="name_radio_type_hack name_radio_type_hack_true"></label>
-                                    <input type="radio" name="sex" value="1"></input>
+                                    <label class="name_radio_type_hack"></label>
+                                    <input type="radio" disabled name="sex" value="1"></input>
                                 </div>
                                 <label>女士</label>
                             </div>
@@ -124,7 +142,7 @@
                         <span>手机：</span>
                     </div>
                     <div class="phone_input">
-                        <input type="text" placeholder="请输入手机号"></input>
+                        <input type="text" disabled name="phone" placeholder="请输入手机号"></input>
                     </div>
                 </div>
             </div>
@@ -135,14 +153,20 @@
                         <span>备注：</span>
                     </div>
                     <div class="remark_textarea">
-                        <textarea placeholder="请输入您的要求，我们会尽量安排"></textarea>
+                        <textarea name="remark" disabled placeholder="请输入您的要求，我们会尽量安排"></textarea>
                     </div>
                 </div>
+            </div>
+            <!-- 表单提交 -->
+            <div id="btnHack"></div>
+            <div id="submitBtn">
+                <button type="button">立即预约</button>
             </div>
         </form>
     </div>
     <!-- 外部库引用 -->
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/orderConfirm.js"></script>
 </body>
 
 </html>

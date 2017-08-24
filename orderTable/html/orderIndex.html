@@ -39,78 +39,27 @@
                         <span>免排队，到店即就餐</span>
                     </div>
                 </div>
-                <!-- 选择具体天数->死链radio->传递给后台value -->
-                <div class="Day_order">
-                    <span>08-07</span>
-                    <span>08-08</span>
-                    <span>08-09</span>
-                    <span>08-10</span>
-                    <span>08-11</span>
-                    <span>08-12</span>
-                    <span>08-13</span>
+                <!-- 选择人数 -->
+                <div id="peopleNumber">
+                    <input class="peopleNumber" type="text" name="peopleNumber" placeholder="请填写预约人数(数字)">人</input>
+                </div>
+                <div id="maskRe">
+                    <h3>请输入正确的人数！</h3>
                 </div>
             </div>
-            <!-- 订座具体时间容器/死链radio->直接传后台value -->
-            <div id="TimeContainer">
-                <div class="time_radio_container">
-                    <span>8:00</span>
-                    <input type="radio" name="time" value="0"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>8:30</span>
-                    <input type="radio" name="time" value="1"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>9:00</span>
-                    <input type="radio" name="time" value="2"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>9:30</span>
-                    <input type="radio" name="time" value="3"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>10:00</span>
-                    <input type="radio" name="time" value="4"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>10:30</span>
-                    <input type="radio" name="time" value="5"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>11:30</span>
-                    <input type="radio" name="time" value="6"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>12:00</span>
-                    <input type="radio" name="time" value="7"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>12:30</span>
-                    <input type="radio" name="time" value="8"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>13:00</span>
-                    <input type="radio" name="time" value="9"></input>
-                </div>
-                <div class="time_radio_container">
-                    <span>13:30</span>
-                    <input type="radio" name="time" value="10"></input>
-                </div>
-            </div>
-            <!-- 余量容器->数据获取渲染 -->
-            <div id="MsgContainer">
-                <span>桌位余量信息：1-5人（余</span>
-                <span class="Msg_msg">2</span>
-                <span>桌）</span>
+            <!-- 我的订单 -->
+            <div id="orderQuery">
+                <a href="orderQuery.html">我的订单</a>
             </div>
             <div id="submitHack"></div>
             <div id="submitContainer">
-                <button type="submit">立即订座</button>
+                <button class="submitBtn" type="button">立即订座</button>
             </div>
         </form>
     </div>
     <!-- 外部库引用 -->
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/orderIndex.js"></script>
 </body>
 
 </html>
