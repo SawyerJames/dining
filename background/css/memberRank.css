@@ -78,7 +78,6 @@ table tbody td:last-child{
 
 /*积分说明*/
 #rankMsg{
-    width: 100%;
     background: #fff;
     padding: 1rem;
     /*flex的兼容布局*/

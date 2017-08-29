@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <!-- ios下删除默认的苹果工具栏和菜单栏 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- ios下控制状态栏显示样式，黑色 -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!-- 电话号码非默认识别 -->
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="../css/couponFunction.css">
+    <link rel="stylesheet" type="text/css" href="../../commonLib/css/common/reset.css">
+    <!-- @media css -->
+    <link rel="stylesheet" type="text/css" href="../../commonLib/css/common/media.css">
+    <title>卡券功能</title>
+</head>
+
+<body>
+    <!-- 父容器 -->
+    <div class="container">
+        <!-- 表格详情 -->
+        <form action="" method="get">
+            <table id="table">
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                        <th class="th1">
+                            <select id="couponType">
+                                <option value="0">全部卡券</option>
+                                <option value="1">兑换券</option>
+                                <option value="2">折扣券</option>
+                                <option value="3">通用券</option>
+                            </select>
+                        </th>
+                        <th class="th2">卡券有效期</th>
+                        <th class="th3">
+                            <select id="couponState">
+                                <option value="0">全部状态</option>
+                                <option value="1">已过期</option>
+                                <option value="2">未过期</option>
+                            </select>
+                        </th>
+                        <th class="th4">操作</th>
+                    </tr>
+                </thead>
+                <!-- 表身 -->
+                <tbody>
+                    <!-- 循环列表 -->
+                    <tr>
+                        <td>兑换券</td>
+                        <td>
+                            <span>2016-01-01</span>
+                            <span>至</span>
+                            <span>2016-01-01</span>
+                        </td>
+                        <td>已过期</td>
+                        <td>
+                            <a href="#" id="d1">删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>折扣券</td>
+                        <td>
+                            <span>2016-01-01</span>
+                            <span>至</span>
+                            <span>2016-01-01</span>
+                        </td>
+                        <td>未过期</td>
+                        <td>
+                            <a href="#" id="d2">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- 确认删除弹窗 -->
+            <div id="mask"></div>
+            <div id="confirmWs">
+                <div class="ws_head">
+                    <h3>您真的要删除么？</h3>
+                </div>
+                <div class="ws_body">
+                    <span class="true">确认</span>
+                    <span class="cancel">取消</span>
+                </div>
+            </div>
+        </form>
+        <!-- 尾部新建优惠券 -->
+        <div id="footerHack"></div>
+        <div id="footer">
+            <button id="newCoupon" type="button">新建优惠券</button>
+        </div>
+    </div>
+    <!-- 外部库引用 -->
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/couponFunction.js"></script>
+</body>
+
+</html>
