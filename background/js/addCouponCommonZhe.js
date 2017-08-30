@@ -14,7 +14,10 @@ $(function() {
         button = $('#submitBtn'),
         validate = $('#validate'),
         chooseTimeFixed1 = $('.chooseTimeFixed1'),
-        chooseTimeFixed2 = $('.chooseTimeFixed2');
+        chooseTimeFixed2 = $('.chooseTimeFixed2'),
+        usePay_text1 = $('.usePay_text1'),
+        usePay_text2 = $('.usePay_text2'),
+        baseDiscount = $('input[name="baseDiscount"]');
 
     // 基本信息值
     var baseColorVal = $('input[name="baseColor"][checked]').val(),
@@ -26,17 +29,35 @@ $(function() {
         discountMsg = $('.discountMsg').val(),
         use_pay_select = $("#use_pay_select option:selected").val(),
         use_share_select = $("#use_share_select option:selected").val(),
-        usePay_text = $('.usePay_text').val(),
+        usePay_text1Val = '',
+        usePay_text2Val = '',
         phoneVal = $('.phone').val();
 
     // 正则
     var phoneRe = /^1(3|4|5|7|8)\d{9}$/,
-        numberRe = /^\d{0,}$/;
+        numberRe = /^\d{0,}$/,
+        discountRe = /^[1-9](\.[1-9])$/;
 
     // 卡券颜色->点击追加特效并移除其他特效
     baseColor.on('click', function() {
         baseColorVal = $(this).val();
         $(this).parent().addClass('true').siblings('.base_color').removeClass('true');
+    });
+
+    // 卡券折扣
+    baseDiscount.blur(function() {
+        // 为空值
+        if (baseDiscount.val() == '') {
+            validate.show().html('').html("折扣额度不能为空");
+        }
+        // 不为空值判断是否填写错误
+        else {
+            if (!discountRe.test(baseDiscount.val())) {
+                validate.show().html('').html("折扣额度填写错误");
+            } else {
+                validate.hide().html('');
+            }
+        }
     });
 
     // 卡券有效期-》点选其中一个，置灰另一个
@@ -114,23 +135,24 @@ $(function() {
         }
     });
 
-    // 使用条件点击 隐藏与显式
-    $('.use_pay_div').hide();
-    usePay.on('click', function() {
-        if ($(this).is(':checked')) {
-            $('.use_pay_div').show();
-        } else {
-            $('.use_pay_div').hide();
-            $('.use_pay_div').find('.usePay_text').val('');
-        }
-    });
-
     // 封面样式
     imgType.on('click', function() {
         imgTypeVal = $(this).val();
         $(this).prev('img').addClass('imgTrue');
         $(this).parent().siblings('.img_type').find('img').removeClass('imgTrue');
     })
+
+    // 使用条件点击 隐藏与显式
+    $('.use_pay_div_zhe').hide();
+    usePay.on('click', function() {
+        if ($(this).is(':checked')) {
+            $('.use_pay_div_zhe').show();
+        } else {
+            $('.use_pay_div_zhe').hide();
+            $('.use_pay_div_zhe').find('.usePay_text1').val('');
+            $('.use_pay_div_zhe').find('.usePay_text2').val('');
+        }
+    });
 
     // 使用条件
     $('#use_pay_select').on('click', function() {
@@ -178,44 +200,68 @@ $(function() {
         usePay_text = $('.usePay_text').val();
         // 获取到两个有效期的input日期的值
         var startTime = chooseTimeFixed1.val(),
-            endTime = chooseTimeFixed2.val();
+            endTime = chooseTimeFixed2.val(),
+            usePay_text1Val = usePay_text1.val();
+            usePay_text2Val = usePay_text2.val();
         // 将开始时间与结束时间转换成中国标准时间
         var start = new Date(startTime.replace("-", "/").replace("-", "/")),
             end = new Date(endTime.replace("-", "/").replace("-", "/"));
         // 验证空及undefined值->不通过
+        // 卡券标题
         if (baseTitleVal == '') {
             validate.show().html('').html("请输入卡券标题");
         }
+        // 卡券有效期
         if (chooseTimeVal == undefined) {
             validate.show().html('').html("请选择有效期");
-        }
-        if (slotVal == undefined) {
-            validate.show().html('').html("请选择可用时段");
         }
         // 固定有效期判断
         if (start > end) {
             validate.show().html('').html("开始日期不得大于结束日期");
         }
-        // 选择部分时段，判断内容是否填充
-        if (slotVal == 1) {
-            var slotInputVal = slotInput.val();
-            if (!slotName.is(':checked') && slotInputVal === '') {
-                validate.show().html('').html("部分时段填写错误");
-            }
+        // 卡券时间段
+        if (slotVal == undefined) {
+            validate.show().html('').html("请选择可用时段");
         }
+        // 卡券折扣力度
+        if (baseDiscount.val() == '') {
+            validate.show().html('').html("折扣额度不能为空");
+        }
+        if (!discountRe.test(baseDiscount.val())) {
+            validate.show().html('').html("折扣额度填写错误");
+        }
+        // 封面简介
         if (discountMsg == '') {
             validate.show().html('').html("请填写封面简介");
         }
-        // 同时满足两种条件，且并行空字符则验证不通过使用规则
-        if ((use_share_select == null || use_share_select == 0) && usePay_text == '') {
+        // 使用规则：同时满足两种条件，且并行空字符则验证不通过使用规则
+        if ((use_share_select == null || use_share_select == 0) && (usePay_text1Val == '' && usePay_text2Val == '')) {
             validate.show().html('').html("请选择使用条件");
         }
+        if ((use_share_select != null || use_share_select != 0) && (usePay_text1Val != '' || usePay_text2Val != '')) {
+            validate.show().html('').html("不能同时选择两种适用条件");
+        }
         // 所有验证通过后提交表单
-        if (baseTitleVal != '' && chooseTimeVal != undefined && slotVal != undefined && (start <= end) && discountMsg != '' && ((use_share_select != null || use_share_select != 0) && usePay_text != '')) {
-            // 隐藏表单
-            validate.html('').hide();
-            // 提交表单
-            $('form').submit();
+        if (baseTitleVal != '' && baseDiscount.val() != '' && discountRe.test(baseDiscount.val()) && chooseTimeVal != undefined && slotVal != undefined && (start <= end) && discountMsg != '' && ((use_share_select != null || use_share_select != 0) || (usePay_text1 == '' && usePay_text2 == '')) && ((use_share_select != null || use_share_select != 0) && (usePay_text1Val != '' || usePay_text2Val != ''))) {
+            // 选择时段，判断内容是否填充
+            if (slotVal == 0) {
+                // 隐藏表单
+                validate.html('').hide();
+                // 提交表单
+                $('form').submit();
+            }
+            if (slotVal == 1) {
+                var slotInputVal = slotInput.val(),
+                    slotValTrue = '';
+                if (!slotName.is(':checked') && slotInputVal === '') {
+                    validate.show().html('').html("部分时段填写错误");
+                } else {
+                    // 隐藏表单
+                    validate.html('').hide();
+                    // 提交表单
+                    $('form').submit();
+                }
+            }
         }
     })
 })

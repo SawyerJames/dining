@@ -227,7 +227,34 @@ textarea {
     margin-top: .5rem;
 }
 
-
+/*折扣程度*/
+.base_discount{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: flex-start;
+    align-items: flex-start;
+}
+.base_discount>div{
+    width: 100%;
+}
+.base_discount>div input{
+    width: 80%;
+    padding: .5rem;
+    margin-top: .5rem;
+}
+.base_discount p{
+    margin-top: .5rem;
+    font-size: .75rem;
+    color: #777;
+}
 /*卡券有效期*/
 
 .base_chooseTime>span {
@@ -371,7 +398,7 @@ textarea {
 }
 
 .discount_use>div {
-    margin: .5rem 0;
+    margin: .5rem 0 0 0;
 }
 
 .use_pay div {
@@ -384,11 +411,30 @@ textarea {
     -ms-align-items: center;
     align-items: center;
 }
-
-.use_pay .use_pay_div {
-    display: none;
+/*适用条件*/
+.use_pay_div_zhe{
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -ms-align-items: flex-start !important;
+    align-items: flex-start !important;
 }
-
+.use_pay_div_zhe div{
+    width: 100%;
+}
+.use_pay_div_zhe input{
+    width: 60% !important;
+    padding: .3rem;
+    margin-top: .5rem;
+}
+.use_pay_div_zhe p{
+    margin: .5rem 0;
+    font-size: .75rem;
+    color: #777;
+}
+/*适用条件end*/
 .use_pay div:first-child {
     margin: .5rem 0;
 }
