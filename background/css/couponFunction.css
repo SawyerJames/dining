@@ -81,10 +81,10 @@ body {
     font-size: .75rem;
 }
 #table tbody td a{
-    display: block;
-    width: 2.5rem;
-    height: 1.5rem;
-    line-height: 1.7rem;
+    display: inline-block;
+    width: 2rem;
+    height: 1.2rem;
+    line-height: 1.4rem;
     border-radius: .2rem;
     background: #ddd;
     margin: 0 auto;
@@ -107,6 +107,10 @@ body {
 }
 #table tbody td:last-child{
     border: none;
+}
+#table tbody td .pushCoupon{
+    color: #fff;
+    background: #FF4E30;
 }
 /*尾部*/
 #footerHack{

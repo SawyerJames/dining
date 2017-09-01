@@ -20,23 +20,38 @@
 <body>
     <!-- 父容器 -->
     <div class="container">
-        <!-- 头部容器 -->
-        <div id="headContainer">
-            <h3>时间</h3>
-            <h3>人数</h3>
-            <h3>包厢</h3>
-            <h3>删除</h3>
-        </div>
-        <!-- 主容器 -->
-        <div id="msgContainer">
-            <!-- 单一容器列表 -->
-            <div class="listContainer">
-                <span>2017.08.08</span>
-                <span>2</span>
-                <span>A-401</span>
-                <img class="cancelBtn" src="../images/orderQuery/cancel.png">
-            </div>
-        </div>
+        <!-- 表格容器 -->
+        <table>
+            <!-- 表格头部 -->
+            <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>人数</th>
+                    <th>包厢</th>
+                    <th>删除</th>
+                </tr>
+            </thead>
+            <!-- 表格主要信息 -->
+            <tbody>
+                <!-- 每一个列表信息 -->
+                <tr id="order1">
+                    <td>2017.08.08</td>
+                    <td>2</td>
+                    <td>A-401</td>
+                    <td class="cancelBtn">
+                        <img src="../images/orderQuery/cancel.png">
+                    </td>
+                </tr>
+                <tr id="order2">
+                    <td>2017.08.08</td>
+                    <td>2</td>
+                    <td>A-401</td>
+                    <td class="cancelBtn">
+                        <img src="../images/orderQuery/cancel.png">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <!-- 尾部HACK -->
         <div id="footerHack"></div>
         <!-- 尾部 -->

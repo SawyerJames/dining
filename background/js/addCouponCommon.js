@@ -1,6 +1,5 @@
 ;
 $(function() {
-
     // 获取变量
     var baseColor = $('input[name="baseColor"]'),
         baseTitle = $('input[name="baseTitle"]'),
