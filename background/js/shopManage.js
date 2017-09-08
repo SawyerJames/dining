@@ -39,6 +39,7 @@
 			confirmWs.hide();
 		})
 	}
+	
 	if ($('.shopMsg').length == 0) {
 		empty.show();
 	}else{

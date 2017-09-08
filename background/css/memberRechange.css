@@ -26,7 +26,7 @@ body {
 /*头部*/
 #imgContainer{
     width: 100%;
-    height: 10rem;
+    height: 4rem;
     background: url(../images/rechangeBg.png);
     background-size: cover;
 }

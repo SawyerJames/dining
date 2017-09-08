@@ -78,7 +78,7 @@ body {
 }
 /*我的积分*/
 #expContainer{
-    width: 90%;
+    width: 100%;
     height: auto;
     margin: 0 auto 1rem;
     padding-bottom: 1rem;
@@ -97,9 +97,13 @@ body {
     -ms-flex-direction: row;
     -o-flex-direction: row;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     -ms-align-items: center;
     align-items: center;
+}
+#expContainer a{
+    color: #333;
+    text-decoration: none;
 }
 /*商品列表*/
 #goodsContainer{

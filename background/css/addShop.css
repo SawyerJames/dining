@@ -43,6 +43,11 @@ textarea {
     border: 1px solid #ddd;
 }
 
+.shopSingle select{
+    padding: .25rem .5rem;
+    height: 2rem;
+    border: 1px solid #ddd;
+}
 /*地图调用基本样式*/
 
 .addMap {

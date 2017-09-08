@@ -161,11 +161,12 @@ body {
     border-radius: .3rem;
     background: #FF4E30;
     color: #eee;
-    font-size: .75rem;
+    font-size: .875rem;
 }
 #msgContainer .up_container .up_msg p{
     color: #FF4E30;
     font-weight: bold;
+    font-size: 1rem;
 }
 /*消费得积分*/
 #msgContainer .msg_container{

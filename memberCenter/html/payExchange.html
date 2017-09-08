@@ -55,9 +55,25 @@
                 </tr>
             </tbody>
         </table>
+        <!-- 没有门店时显示提示 -->
+        <div id="empty">
+            <img src="../../commonLib/images/empty.png">
+            <h3>暂无数据哦</h3>
+        </div>
     </div>
     <!-- 外部库引用 -->
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    ;
+    $(function() {
+        var empty = $('#empty');
+        if ($('tbody').find('tr').length == 0) {
+            empty.show();
+        } else {
+            empty.hide();
+        }
+    })
+    </script>
 </body>
 
 </html>

@@ -35,4 +35,11 @@
 			confirmWs.hide();
 		})
 	}
+	// 暂无数据
+    var empty = $('#empty');
+    if ($('tbody').find('tr').length == 0) {
+        empty.show();
+    } else {
+        empty.hide();
+    }
 })

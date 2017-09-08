@@ -1,18 +1,5 @@
 ;
 $(function() {
-    // 拿到第一个大类目名字
-    // console.log(data.category);
-    // console.log(data.category[1].secondary_category[0].category_name);
-    // console.log(data.category[0].category_name);
-    // 拼接json至选择器
-    $.each(data.category, function(index, item) {
-        // 循环拿到每一个1级类目名字
-        console.log(item.category_name);
-        $('#shopData').append(
-            '<option value="'+item.category_name+'">'+item.category_name+'</option>'
-        )
-    });
-
     // 初始化获得一些标签并命名
     var shopLocation = $('input[name="shopLocation"]'),
         bMapDiv = $('.bMap'),
@@ -148,6 +135,9 @@ $(function() {
     });
 
     submitBtn.on('click', function() {
+        // 美食种类赋值
+        var shopDataVal = $('#shopData option:selected').val()
+        // 资质证件号验证制0
         if (zizhiMainVal == '') {
             zizhiMainVal = 0;
         }
