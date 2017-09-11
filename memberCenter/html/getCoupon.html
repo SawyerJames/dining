@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <!-- ios下删除默认的苹果工具栏和菜单栏 -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!-- ios下控制状态栏显示样式，黑色 -->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!-- 电话号码非默认识别 -->
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="../css/getCoupon.css">
+    <link rel="stylesheet" type="text/css" href="../../commonLib/css/common/reset.css">
+    <!-- @media css -->
+    <link rel="stylesheet" type="text/css" href="../../commonLib/css/common/media.css">
+    <title>领取卡券</title>
+</head>
+
+<body>
+    <!-- 父容器 -->
+    <div class="container">
+        <!-- 头部图片 -->
+        <div id="imgContainer">
+            <form action="" method="get" id="form">
+                <input type="text" placeholder="搜索门店，寻找优惠券"></input>
+                <button type="submit"><img src="../images/getCoupon/search.png"></button>
+            </form>
+        </div>
+        <!-- 卡券详细 -->
+        <div id="couponContainer">
+           <div class="couponContent">
+               <img src="">
+                <button type="botton" value="" class="getCoupon">领取会员卡</button>
+           </div> 
+        </div>
+    </div>
+    <!-- 外部库引用 -->
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script>
+</body>
+
+</html>
